@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-//import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 
-/**
-  Challenge: Display all users to the browser
-**/
+
 
 const users = [
   { name: "John Doe", id: 1 },
@@ -12,92 +10,77 @@ const users = [
   { name: "Billy Doe", id: 3 }
 ];
 
-// comment this out after completion and uncomment code below it to proceed
-// function Child() {
-//   return <div><h1>This is children content</h1></div>;
-// }
+  function Child({ onAddToParent }) {
 
-  //Challenge: Uncomment this code to complete quiz
-
-
-function Child() {
-  return (
-    <>
-      <div>Child</div>
-      <button>Change Parent Value</button>
-    </>
-  );
-}
-
-function Parent() {
-  const [value] = React.useState(
-   
-    "I need to be updated from my child"
-
-  );
-  // const handleClick = () => {(setValue())}
-
-  return (
-    <>
-      <h3>Update Parent State Challenge (Using Callback)</h3>
-      <div className="wrapper">
-        <div>Parent</div>
-        <div className="box-wrapper">{value}</div>
-      </div>
-
-      <div className="wrapper">
-        <Child />
-      </div>
-    </>
-  );
-}
-//Uncomment this to tackle quiz
-
-// Comment out after completion
-// function Parent() {
-//   return (
-//     <div>
-//       <h3>Parent Component</h3>
-//     </div>
-//   );
-// }
-// Comment above code after completion
-
-function App() {
-  const [toggled,setToggled] = React.useState(false);
-
-  function handleClick(event){
-    setToggled(toggled=>!toggled)
-    console.log (event)
+    return (
+      <>
+        <div>Child</div>
+        <button onClick={onAddToParent}>Change Parent Value</button>
+      </>
+    );
   }
-
   
-
+  function Parent() {
+    const [value, setValue] = useState(
+      "I need to be updated from my child"
+    );
   
-  return (
+    return (
+      <>
+        <h3>Update Parent State Challenge (Using Callback)</h3>
+        <div className="wrapper">
+          <div>Parent</div>
+          <div className="box-wrapper">{value}</div>
+        </div>
+  
+        <div className="wrapper">
+          <Child onAddToParent={() => setValue(' jSX isnt that cool')}/>
+        </div>
+      </>
+    );
+  }
+  
+  
+  function App() {
     
-    <>
-    <h1>'JSX IS COOL !!'</h1>
-    <img src={'https://raw.githubusercontent.com/jsx-ir/logo/master/jsx.png'} className="App-logo" alt="logo" />
+    const [toggleChallenge, setToggleChallenge] = useState(false);
     
-      <h3>User names</h3>
-      <ul>
+    const users = [
+      { name: "John Doe", id: 1 },
+      { name: "Jane Doe", id: 2 },
+      { name: "Billy Doe", id: 3 }
+    ];
+  
+   
+    
+    function handleClick() {
+      setToggleChallenge(toggleChallenge ? "" : "Toggle Challenge")
+      return toggleChallenge
+    }
+  
+  
+    return (
+      
+      <> 
+        <h1 style = {{ textDecoration : "underline", color : "red"}}>JSX is cool!</h1>   
+        <img src={logo} className="App-logo" alt="logo" />
+        <h3>User names</h3>
+        <ul>
         {users.map(users=>{
           return(
             <li key={users.id}>{users.name}</li>
           )
         })}
       
-      </ul>
-      
-      <button className="" onClick={handleClick}>{toggled ? 'Hide Element Below' :'show element'}</button>
-
-      <div>Toggle Challenge</div>
-      <Parent>
-      <Child />
-    </Parent>
-    </>
-  );
-}
-
-export default App;
+        </ul>
+        <button onClick={handleClick} > { toggleChallenge ? 'Hide Element Below' : 'Show Element' } </button>
+  
+        <div>{toggleChallenge}</div>
+        <Parent>
+        <Child />
+        </Parent>
+      </>
+    );
+  }
+  
+  export default App;
