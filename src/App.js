@@ -66,30 +66,30 @@ function Parent() {
 //   );
 // }
 // Comment above code after completion
-const userNames= users.map((users)=>
-<li key={users.id}>
-  {users.toString}
-</li>)
+// const userNames= users.map((users)=>
+// <li key={users.id}>
+//   {users.toString}
+// </li>)
 
-const [isVisible, setIsVisible]= useState(true)
-setIsVisible(false)
-setIsVisible(false)
+// const [isVisible, setIsVisible]= useState(true)
+// setIsVisible(false)
+// setIsVisible(false)
 
-setIsVisible(prevIsVisibleValue => !prevIsVisibleValue)
+// setIsVisible(prevIsVisibleValue => !prevIsVisibleValue)
 
 function App() {
   const [] = React.useState(true);
   return (
     
     <>
-    <p><h1>JSX IS COOL</h1></p>
-    <img src={logo} className="App-logo" alt="logo" />
+    <p><h1>'JSX IS COOL !!'</h1></p>
+    <img src={'https://raw.githubusercontent.com/jsx-ir/logo/master/jsx.png'} className="App-logo" alt="logo" />
     
       <h3>User names</h3>
       <ul>
-        {userNames}
+      
       </ul>
-      <button onClick={handleClick}>Hide Element Below</button>
+      <button>Hide Element Below</button>
 
       <div> Toggle Challenge</div>
       <Parent>
