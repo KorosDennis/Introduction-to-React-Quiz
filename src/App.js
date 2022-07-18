@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 
@@ -62,8 +62,8 @@ const users = [
     return (
       
       <> 
-        <h1 style = {{ textDecoration : "underline", color : "red"}}>JSX is cool!</h1>   
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1>JSX is cool!</h1>   
+        <img src={'https://raw.githubusercontent.com/jsx-ir/logo/master/jsx.png'} className="App-logo" alt="logo" />
         <h3>User names</h3>
         <ul>
         {users.map(users=>{

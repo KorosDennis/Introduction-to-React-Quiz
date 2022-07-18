@@ -46,6 +46,10 @@ div{
 ul {
   margin-top: 5px;
 }
+h1 {
+  color: rgb(114, 177, 156);
+
+}
 
 
 @keyframes App-logo-spin {
