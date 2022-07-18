@@ -87,6 +87,11 @@ function App() {
     
       <h3>User names</h3>
       <ul>
+        {users.map(users=>{
+          return(
+            <li key={users.index}>{users.name}</li>
+          )
+        })}
       
       </ul>
       <button>Hide Element Below</button>
