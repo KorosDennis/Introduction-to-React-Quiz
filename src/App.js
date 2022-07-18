@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 
@@ -13,11 +13,19 @@ const users = [
 ];
 
 // comment this out after completion and uncomment code below it to proceed
-function Child() {
-  return <div>This is children content</div>;
+// function Child() {
+//   return <div><h1>This is children content</h1></div>;
+// }
+
+  //Challenge: Uncomment this code to complete quiz
+
+function handleClick(event){
+  console.log(event)
 }
-/**
-  Challenge: Uncomment this code to complete quiz
+
+// function handleChange(event){
+//   console.log (event.target.value)
+// }
 
 function Child() {
   return (
@@ -47,31 +55,43 @@ function Parent() {
     </>
   );
 }
-Uncomment this to tackle quiz
-**/
+//Uncomment this to tackle quiz
 
 // Comment out after completion
-function Parent() {
-  return (
-    <div>
-      <h3>Parent Component</h3>
-    </div>
-  );
-}
+// function Parent() {
+//   return (
+//     <div>
+//       <h3>Parent Component</h3>
+//     </div>
+//   );
+// }
 // Comment above code after completion
+const userNames= users.map((users)=>
+<li key={users.id}>
+  {users.toString}
+</li>)
+
+const [isVisible, setIsVisible]= useState(true)
+setIsVisible(false)
+setIsVisible(false)
+
+setIsVisible(prevIsVisibleValue => !prevIsVisibleValue)
 
 function App() {
   const [] = React.useState(true);
   return (
     
     <>
-    
+    <p><h1>JSX IS COOL</h1></p>
     <img src={logo} className="App-logo" alt="logo" />
+    
       <h3>User names</h3>
-      <ul></ul>
-      <button>Hide Element Below</button>
+      <ul>
+        {userNames}
+      </ul>
+      <button onClick={handleClick}>Hide Element Below</button>
 
-      <div>Toggle Challenge</div>
+      <div> Toggle Challenge</div>
       <Parent>
       <Child />
     </Parent>
