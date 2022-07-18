@@ -30,9 +30,12 @@ function Child() {
 }
 
 function Parent() {
-  const [value, setValue] = React.useState(
+  const [value] = React.useState(
+   
     "I need to be updated from my child"
+
   );
+  // const handleClick = () => {(setValue())}
 
   return (
     <>
@@ -61,11 +64,12 @@ function Parent() {
 // Comment above code after completion
 
 function App() {
-  const [toggled,setToggled] = React.useState(true);
+  const [toggled,setToggled] = React.useState(false);
 
-  // function handleClick(event){
-  //   console.log (event)
-  // }
+  function handleClick(event){
+    setToggled(toggled=>!toggled)
+    console.log (event)
+  }
 
   
 
@@ -86,7 +90,7 @@ function App() {
       
       </ul>
       
-      <button onClick={(event)=> setToggled(true)}>Hide Element Below</button>
+      <button className="" onClick={handleClick}>{toggled ? 'Hide Element Below' :'show element'}</button>
 
       <div>Toggle Challenge</div>
       <Parent>
