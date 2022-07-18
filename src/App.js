@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
 /**
@@ -19,13 +19,6 @@ const users = [
 
   //Challenge: Uncomment this code to complete quiz
 
-function handleClick(event){
-  console.log(event)
-}
-
-// function handleChange(event){
-//   console.log (event.target.value)
-// }
 
 function Child() {
   return (
@@ -66,37 +59,36 @@ function Parent() {
 //   );
 // }
 // Comment above code after completion
-// const userNames= users.map((users)=>
-// <li key={users.id}>
-//   {users.toString}
-// </li>)
-
-// const [isVisible, setIsVisible]= useState(true)
-// setIsVisible(false)
-// setIsVisible(false)
-
-// setIsVisible(prevIsVisibleValue => !prevIsVisibleValue)
 
 function App() {
-  const [] = React.useState(true);
+  const [toggled,setToggled] = React.useState(true);
+
+  // function handleClick(event){
+  //   console.log (event)
+  // }
+
+  
+
+  
   return (
     
     <>
-    <p><h1>'JSX IS COOL !!'</h1></p>
+    <h1>'JSX IS COOL !!'</h1>
     <img src={'https://raw.githubusercontent.com/jsx-ir/logo/master/jsx.png'} className="App-logo" alt="logo" />
     
       <h3>User names</h3>
       <ul>
         {users.map(users=>{
           return(
-            <li key={users.index}>{users.name}</li>
+            <li key={users.id}>{users.name}</li>
           )
         })}
       
       </ul>
-      <button>Hide Element Below</button>
+      
+      <button onClick={(event)=> setToggled(true)}>Hide Element Below</button>
 
-      <div> Toggle Challenge</div>
+      <div>Toggle Challenge</div>
       <Parent>
       <Child />
     </Parent>
